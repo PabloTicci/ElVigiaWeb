@@ -11,16 +11,16 @@
 <body>
     <div class="login-box">
         <h2>Login</h2>
-        <form>
+        <form method = "post" action="login.php">
             <div class="user-box">
-                <input type="text" name="" required="">
-                <label>Username</label>
+                <input type="text" name="usuario" required="">
+                <label for="usuario">Username</label>
             </div>
             <div class="user-box">
-                <input type="password" name="" required="">
-                <label>Password</label>
+                <input type="password" name="clave" required="">
+                <label for="clave">Password</label>
             </div>
-            <a href="#">
+            <a href="upload.php">
                 <span></span>
                 <span></span>
                 <span></span>
