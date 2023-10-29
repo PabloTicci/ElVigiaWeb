@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // Las credenciales son correctas, el usuario está autenticado
-        echo "¡Acceso concedido!";
+        header("Location: upload.php");
     } else {
         // Las credenciales son incorrectas, el usuario no está autenticado
-        echo "¡Acceso denegado!";
+        echo "Crendenciales incorrectas. Intentalo de nuevo";
     }
 }
 
