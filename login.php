@@ -1,37 +1,35 @@
 <?php
     include("referencias/login.php");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesion</title>
+    <title>Login Form </title>
     <link rel="stylesheet" href="css/login.css">
     
 </head>
 <body>
     <div class="login-box">
-        <h2>Inicio de Sesion</h2>
+        <h2>Login</h2>
         <form method = "post" action="login.php">
             <div class="user-box">
-                <input type="text" name="usuario" required>
+                <input type="text" name="usuario" required="">
                 <label for="usuario">Username</label>
             </div>
             <div class="user-box">
-                <input type="password" name="clave" required>
+                <input type="password" name="clave" required="">
                 <label for="clave">Password</label>
             </div>
             <!--<input type="submit" value="Iniciar sesión">-->
-            <a href="upload.php">
+            <a href="upload.ph">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <input type="submit" value="Iniciar sesión">
+                Submit
             </a>
         </form>
     </div>
