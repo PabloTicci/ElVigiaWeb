@@ -1,3 +1,8 @@
+<?php
+    include("referencias/login.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +26,12 @@
                 <label for="clave">Password</label>
             </div>
             <!--<input type="submit" value="Iniciar sesión">-->
-            <a href="upload.php" value="Iniciar sesión">
+            <a href="upload.php">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                Submit
+                <input type="submit" value="Iniciar sesión">
             </a>
         </form>
     </div>
