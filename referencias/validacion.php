@@ -18,6 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $clave = $_POST['clave'];
 
     // Realiza la verificación de las credenciales aquí
+    $sql = "SELECT ID FROM usuario WHERE usuario = '$usuario' AND clave = '$clave'";
+    $result = $conn->query($sql);
+
     // Reemplaza 'usuario_correcto' y 'clave_correcta' por los valores reales en tu base de datos.
     if ($usuario === 'usuario_correcto' && $clave === 'clave_correcta') {
         echo "success";
