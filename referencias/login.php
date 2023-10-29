@@ -12,21 +12,17 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los valores del formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
     $usuario = $_POST['usuario'];
     $clave = $_POST['clave'];
 
-    // Consulta para verificar las credenciales
-    $sql = "SELECT ID FROM usuario WHERE usuario = '$usuario' AND clave = '$clave'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // Las credenciales son correctas, el usuario está autenticado
-        header("Location: upload.php");
+    // Realiza la verificación de las credenciales aquí
+    // Reemplaza 'usuario_correcto' y 'clave_correcta' por los valores reales en tu base de datos.
+    if ($usuario === 'usuario_correcto' && $clave === 'clave_correcta') {
+        echo "success";
     } else {
-        // Las credenciales son incorrectas, el usuario no está autenticado
-        echo "Crendenciales incorrectas. Intentalo de nuevo";
+        echo "error";
     }
 }
 
