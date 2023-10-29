@@ -20,6 +20,7 @@
                 <input type="password" name="clave" required="">
                 <label for="clave">Password</label>
             </div>
+            <input type="submit" value="Iniciar sesión">
             <a href="upload.php">
                 <span></span>
                 <span></span>
