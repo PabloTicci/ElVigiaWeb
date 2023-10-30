@@ -21,7 +21,7 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <form action="">
+        <form method="post" action="">
           <div class="mb-3">
             <label for="titulo" class="form-label">Título</label>
             <input type="text" name="titulo" id="titulo" class="form-control" required>
@@ -69,5 +69,13 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
-<script src="js/popup.js"></script>
+<script>
+    window.onload = function() 
+    {
+    var mensaje = "<?php echo $mensaje; ?>";
+    if (mensaje) {
+        alert(mensaje); // Muestra un popup con el mensaje
+    }
+    };
+</script>
 </html>
