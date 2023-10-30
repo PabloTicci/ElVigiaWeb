@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
             include("referencias/validacion.php");
         ?>
 
-        
+
         <form method="post" action="">
             <div class="user-box">
                 <input type="text" name="usuario" id="usuario" required>
