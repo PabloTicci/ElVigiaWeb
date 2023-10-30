@@ -25,12 +25,12 @@
 
           <div class="mb-3">
             <label for="introduccion" class="form-label">Introducción</label>
-            <input type="text" name="introduccion" id="introduccion" class="form-control" required>
+            <input type="text" name="introduccion" id="introduccion" class="form-control form-control-lg" required>
           </div>
 
           <div class="mb-3">
             <label for="noticia" class="form-label">Noticia</label>
-            <input type="text" name="noticia" id="noticia" class="form-control" required>
+            <input type="text" name="noticia" id="noticia" class="form-control form-control-lg" required>
           </div>
 
           <div class="mb-3">
@@ -63,6 +63,6 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
-  
+
 </body>
 </html>
