@@ -16,7 +16,7 @@ if (!empty($_POST["btningresar"]))
 {
     if(empty($_POST["usuario"]) and empty($_POST["clave"]))
     {
-            echo "<div class='alert alert-danger'>Los campos estan vacios</div>";
+            echo "Acceso denegado";
     }
     else
     {
@@ -30,7 +30,7 @@ if (!empty($_POST["btningresar"]))
         }
         else
         {
-            echo "<div class='alert alert-danger'>Acceso denegado</div>";
+            echo "Usuario o contraseña incorrectos";
         }
     }
 } 
