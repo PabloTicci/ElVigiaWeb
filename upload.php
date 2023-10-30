@@ -1,3 +1,7 @@
+<?php
+    include("referencias/up.php")
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,8 +48,8 @@
           </div>
 
           <div class="mb-3">
-            <label for="opciones" class="form-label">Categoría</label>
-            <select id="opciones" name="opcion" class="form-select">
+            <label for="categoria" class="form-label">Categoría</label>
+            <select id="categoria" name="categoria" class="form-select">
               <option value="Estatal">Estatal</option>
               <option value="Nacionales">Nacionales</option>
               <option value="Internacionales">Internacionales</option>
@@ -61,6 +65,14 @@
     </div>
   </div>
 
+  <script>
+        window.onload = function() {
+            var mensaje = "<?php echo $mensaje; ?>";
+            if (mensaje) {
+                alert(mensaje); // Muestra un popup con el mensaje
+            }
+        };
+</script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
 

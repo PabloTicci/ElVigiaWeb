@@ -127,7 +127,7 @@
   <div class="container">
     <div class="footer-content">
       <div class="footer-text">
-        <p>&copy; 2023 Tu Empresa. Todos los derechos reservados.</p>
+        <p>&copy; 2023 El Vigia Hidalgo. Todos los derechos reservados.</p>
       </div>
       <div class="footer-icons">
         <a href="https://m.facebook.com/profile.php/?id=100064576866780" target="_blank" class="face"><img src="resources/img/facebook-icon.png" alt="Facebook"></a>
