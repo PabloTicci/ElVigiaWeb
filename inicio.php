@@ -23,7 +23,7 @@
                 <input type="password" name="clave" id="clave" required>
                 <label for="clave">Password</label>
             </div>
-            <button name="btningresar" class="btn" type="submit" value="Iniciar Seseio"></button>
+            <button name="btningresar" class="btn" type="submit" value="Iniciar Seseio">Iniciar sesion</button>
         </form>
     </div>
     
