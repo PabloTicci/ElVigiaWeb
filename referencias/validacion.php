@@ -28,10 +28,6 @@ if (!empty($_POST["btningresar"]))
         {
             header("location:upload.php");
         }
-        else
-        {
-            print "Usuario o contraseña incorrectos";
-        }
     }
 } 
 
