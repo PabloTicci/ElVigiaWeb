@@ -42,27 +42,15 @@
             </div>
 
             <form method="POST">
-                <ul>
-                     <li>
-                        <label for="Estatales"><input type="radio" id="opcion1" name="opcion" value="Estatal"> Estatl</label>
-                    </li>
-                    <li>
-                        <label for="Nacionales"><input type="radio" id="Nacionales" name="opcion" value="Nacionales"> Nacionales</label>
-                    </li>
-                     <li>
-                        <label for="Internacionales"><input type="radio" id="Internacionales" name="opcion" value="Internacionales"> Opción 3</label>
-                    </li>
-                     <li>
-                        <label for="Deportes"><input type="radio" id="Deportes" name="opcion" value="Deportes"> Deportes</label>
-                    </li>
-                    <li>
-                        <label for="Cultura"><input type="radio" id="Cultura" name="opcion" value="Cultura"> Cultura</label>
-                    </li>
-                     <li>
-                        <label for="Caldero"><input type="radio" id="Caldero" name="opcion" value="Caldero"> Caldero</label>
-                    </li>
-                </ul>
-            <input type="submit" value="Enviar">
+                <label for="opciones">Selecciona una opción:</label>
+                    <select id="opciones" name="opcion">
+                            <option value="Estatal">Estatal</option>
+                            <option value="Nacionales">Nacionales</option>
+                            <option value="Internacionales">Internacionales</option>
+                            <option value="Deportes">Deportes</option>
+                            <option value="Cultura">Cultura</option>
+                            <option value="Caldero">Caldero</option>
+                    </select>   
             </form>
 
             <button name="btnsubir" class="btn" type="submit" value="Subir">Subir Noticia</button>
