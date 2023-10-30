@@ -1,6 +1,4 @@
-<?php
-    include("referencias/validacion.php");
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +12,12 @@
 <body>
     <div class="login-box">
         <h2>Login</h2>
+
+        <?php
+            include("referencias/validacion.php");
+        ?>
+
+        
         <form method="post" action="">
             <div class="user-box">
                 <input type="text" name="usuario" id="usuario" required>
