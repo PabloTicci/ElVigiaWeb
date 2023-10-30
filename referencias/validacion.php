@@ -30,7 +30,7 @@ if (!empty($_POST["btningresar"]))
         }
         else
         {
-            echo "Usuario o contraseña incorrectos";
+            print "Usuario o contraseña incorrectos";
         }
     }
 } 
