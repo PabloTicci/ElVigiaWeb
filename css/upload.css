@@ -1,0 +1,46 @@
+/* estilos.css */
+
+/* Estilos generales */
+body {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .container {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  /* Estilos para el formulario y sus elementos */
+  form {
+    margin-top: 20px;
+  }
+  
+  .form-label {
+    color: #ff6666;
+  }
+  
+  .form-control {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  .form-select {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  .btn-danger {
+    background-color: #ff4444;
+    border: none;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .col-md-6 {
+      margin-top: 20px;
+    }
+  }
+  
