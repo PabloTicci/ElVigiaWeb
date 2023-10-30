@@ -12,21 +12,28 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
+if (!empty($_POST["btningresar"]))
 {
-    $usuario = $_POST['usuario'];
-    $clave = $_POST['clave'];
-
-    // Realiza la verificación de las credenciales aquí
-    $sql = "SELECT ID FROM usuario WHERE usuario = '$usuario' AND clave = '$clave'";
-    $result = $conn->query($sql);
-
-    // Reemplaza 'usuario_correcto' y 'clave_correcta' por los valores reales en tu base de datos.
-    if ($usuario === 'usuario_correcto' && $clave === 'clave_correcta') {
-        echo "success";
-    } else {
-        echo "error";
+    if(empty($_POST["usuario"]) and empty($_POST["clave"]))
+    {
+            echo "<div class='alert alert-danger'>Los campos estan vacios</div>";
     }
-}
+    else
+    {
+        $usuario = $_POST["usuario"];
+        $clave = $_POST["clave"];
+
+        $sql = $conn->query(" SELECT * FROM  usuario WHERE usuario='$usuario' and clave='$clave'");
+        if($datos = $sql->fetch_object())
+        {
+            header("location:upload.php");
+        }
+        else
+        {
+            echo "<div class='alert alert-danger'>Acceso denegado</div>";
+        }
+    }
+} 
+
 
 ?>

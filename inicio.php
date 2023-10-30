@@ -14,7 +14,7 @@
 <body>
     <div class="login-box">
         <h2>Login</h2>
-        <form method="post" action="javascript:void(0);" onsubmit="validateForm()">
+        <form method="post" action="">
             <div class="user-box">
                 <input type="text" name="usuario" id="usuario" required>
                 <label for="usuario">Username</label>
@@ -23,13 +23,7 @@
                 <input type="password" name="clave" id="clave" required>
                 <label for="clave">Password</label>
             </div>
-            <a href="javascript:void(0);" onclick="validateForm()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Submit
-            </a>
+            <button name="btningresar" class="btn" type="submit" value="Iniciar Seseio"></button>
         </form>
     </div>
     
