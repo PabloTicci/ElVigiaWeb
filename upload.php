@@ -1,7 +1,3 @@
-<?php
-    include("referencias/up.php")
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,7 +17,7 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <form method="post" action="">
+        <form method="post">
           <div class="mb-3">
             <label for="titulo" class="form-label">Título</label>
             <input type="text" name="titulo" id="titulo" class="form-control" required>
@@ -61,6 +57,9 @@
 
           <button name="btnsubir" class="btn btn-danger" type="submit" value="Subir">Subir Noticia</button>
         </form>
+        <?php
+          include("referencias/up.php")
+        ?>
       </div>
     </div>
   </div>

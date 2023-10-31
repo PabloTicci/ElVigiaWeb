@@ -12,10 +12,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
-
-if (!empty($_POST["btnsubir"]))
+if(isset($_POST['btnsubir']))
 {
-    if(empty($_POST["titulo"]) and empty($_POST["noticia"]) and empty($_POST["fotos"]) and empty($_POST["fuente"]) and empty($_POST["categoria"]))
+    if(empty($_POST["titulo"]) && empty($_POST["noticia"]) && empty($_POST["fotos"]) && empty($_POST["fuente"]) && empty($_POST["categoria"]))
     {
             echo "Acceso denegado";
     }
@@ -28,12 +27,19 @@ if (!empty($_POST["btnsubir"]))
         $fuente = $_POST["fuente"];
         $categoria = $_POST["categoria"];
 
-        $sql = $conn->query("INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$fotos',curdate(),'$fuente','$categoria')");
-        
-        if ($sql) {
-            $mensaje = "Noticia subida correctamente.";
-        } else {
-            $mensaje = "Error al subir la noticia: " . $conn->error;
+        $consulta = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$fotos',curdate(),'$fuente','$categoria')";
+        $resultado = mysqli_query($conn,$consulta);
+        if($resultado)
+        {
+            ?>
+            <h3 class = "ok"> Registro guadado Correctamente </h3>
+            <?php
+        }
+        else
+        {
+            ?>
+            <h3 class = "Bad"> Error </h3>
+            <?php
         }
     }
 } 
