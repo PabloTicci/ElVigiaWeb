@@ -36,7 +36,11 @@ body {
     background-color: #ff4444;
     border: none;
   }
-  
+
+  .ok, .bad
+  {
+    color: white;
+  }  
   /* Estilos responsivos */
   @media (max-width: 768px) {
     .col-md-6 {
