@@ -98,7 +98,7 @@
       <div class="footer-icons">
         <a href="https://m.facebook.com/profile.php/?id=100064576866780" target="_blank" class="face"><img src="resources/img/facebook-icon.png" alt="Facebook"></a>
         <a href="https://x.com/vigiahidalgo?s=21&t=iynC3EZB_UOgI-jgpQvF6A" target="_blank" class="twit"><img src="resources/img/twitter-icon.png" alt="Twitter"></a>
-        <a href="https://www.tiktok.com/@viga.hidalgo?_t=8gypQDaGQ22&_r=1" alt="TikTok"><img src="resources/img/logotiktok.png" alt="TikTok"></a>
+        <a href="https://www.tiktok.com/@viga.hidalgo?_t=8gypQDaGQ22&_r=1" alt="TikTok" class="tiktok"><img src="resources/img/logotiktok.png" alt="TikTok"></a>
       </div>
     </div>
   </div>
