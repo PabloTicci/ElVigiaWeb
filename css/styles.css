@@ -463,12 +463,12 @@ nav a:hover
     {
         width: 450px; /* Tamaño original para pantallas más grandes */
         height: 600px;
-        margin-bottom: 0%;
+        margin-bottom: 5%;
     }
 
     .c1,.c2
     {
-        margin-left: 0%;
+        margin-left: 20%;
     }
 
 
