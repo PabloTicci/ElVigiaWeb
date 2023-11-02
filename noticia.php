@@ -74,16 +74,16 @@
 <script src="js/main.js"></script>
 </body>
 
-<footer class="footer">
+<<footer class="footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-text">
-        <p>&copy; 2023 Tu Empresa. Todos los derechos reservados.</p>
+        <p>&copy; 2023 El Vigia Hidalgo. Todos los derechos reservados.</p>
       </div>
       <div class="footer-icons">
-        <a href="https://m.facebook.com/profile.php/?id=100064576866780" target="_blank" class="face"><img src="facebook-icon.png" alt="Facebook"></a>
-        <a href="https://x.com/vigiahidalgo?s=21&t=iynC3EZB_UOgI-jgpQvF6A" target="_blank" class="twit"><img src="instagram-icon.png" alt="Twitter"></a>
-        <a href="https://www.youtube.com/tuempresa" target="_blank"><img src="youtube-icon.png" alt="YouTube"></a>
+        <a href="https://m.facebook.com/profile.php/?id=100064576866780" target="_blank" class="face"><img src="resources/img/facebook-icon.png" alt="Facebook"></a>
+        <a href="https://x.com/vigiahidalgo?s=21&t=iynC3EZB_UOgI-jgpQvF6A" target="_blank" class="twit"><img src="resources/img/twitter-icon.png" alt="Twitter"></a>
+        <a href="https://www.tiktok.com/@viga.hidalgo?_t=8gypQDaGQ22&_r=1" alt="TikTok"></a>
       </div>
     </div>
   </div>
