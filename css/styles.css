@@ -166,7 +166,8 @@ nav a:hover
 
 .c3
 {
-    background-image: url(../resources/img/deportes.jpg);    
+    background-image: url(../resources/img/deportes.jpg); 
+    margin-left: 10%;   
 }
 
 .page-content .card
