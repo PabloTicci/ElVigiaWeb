@@ -61,7 +61,7 @@ body
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    background-size: auto;
+    background-size: contain;
     width: 100%;
     height: 400px !important;
     background: #292929;  
