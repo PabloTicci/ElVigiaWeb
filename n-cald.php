@@ -54,6 +54,10 @@
     </nav>
 </header>
 
+<header class="showcase">
+      <h1>Caldero magico</h1>
+</header>
+
 <div class="container cont-noti">
         <div class="Noticias">
             <?php
