@@ -55,6 +55,7 @@
 </header>
 
 <header class="showcase caldero">
+  <img src="resources/img/caldero.jpg" alt="">
 </header>
 
 <div class="container cont-noti">
