@@ -76,9 +76,11 @@ body
     background: linear-gradient(to right, #3b3b3b69, #ab2f2f69), url(../resources/img/caldero.jpg) no-repeat center center/cover;
 }*/
 
-.showcase
+.caldero
 {
-    width: 100%;
+    background-image: url('../resources/img/caldero.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 
 .navbar-toggler 
