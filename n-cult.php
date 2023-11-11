@@ -54,6 +54,11 @@
     </nav>
 </header>
 
+<header class="showcase cultura">
+  <img src="resources/img/espectaculo.jpeg" alt="">
+</header>
+
+
 <div class="container cont-noti">
         <div class="Noticias">
             <?php
