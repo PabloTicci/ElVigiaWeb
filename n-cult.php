@@ -55,7 +55,7 @@
 </header>
 
 <header class="showcase cultura">
-  <img src="resources/img/espectaculo.jpeg" alt="">
+  <img src="resources/img/espectaculo-portada.jpeg" alt="">
 </header>
 
 
