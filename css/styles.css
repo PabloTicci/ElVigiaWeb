@@ -74,6 +74,30 @@ body
     background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/cultura-portada.jpeg) no-repeat center center/cover;
 }
 
+.deporte
+{
+    background: -webkit-linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/deportes-portada.jpeg) no-repeat center center/cover;  
+    background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/deportes-portada.jpeg) no-repeat center center/cover;
+}
+
+.estatales
+{
+    background: -webkit-linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/cultura-portada.jpeg) no-repeat center center/cover;  
+    background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/cultura-portada.jpeg) no-repeat center center/cover;
+}
+
+.nacionales
+{
+    background: -webkit-linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/nacionales-portada.jpeg) no-repeat center center/cover;  
+    background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/nacionales-portada.jpeg) no-repeat center center/cover;
+}
+
+.internacionales
+{
+    background: -webkit-linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/internacionales-portada.jpeg) no-repeat center center/cover;  
+    background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/internacionales-portada.jpeg) no-repeat center center/cover;
+}
+
 .navbar-toggler 
 {
     color: white !important;
