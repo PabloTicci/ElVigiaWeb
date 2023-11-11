@@ -70,8 +70,8 @@ body
 
 .cultura
 {
-    background: -webkit-linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/cultura-portada.jpeg) no-repeat center center/auto;  
-    background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/cultura-portada.jpeg) no-repeat center center/auto;
+    background: -webkit-linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/cultura-portada.jpeg) no-repeat center center/contain;  
+    background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/cultura-portada.jpeg) no-repeat center center/contain;
 }
 
 .deporte
