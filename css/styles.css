@@ -63,7 +63,7 @@ body
     justify-content: flex-end;
     background-size: cover;
     width: 100%;
-    height: 550px !important;
+    height: 400px !important;
     background: #661c1c;  
     z-index: 1; 
 }
