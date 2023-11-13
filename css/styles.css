@@ -205,12 +205,14 @@ nav a:hover
 
 .c2
 {
+    background-size: cover;
     background-image: url(../resources/img/cultura.jpg);
      margin-left:20%;
 }
 
 .c3
 {
+    background-size: cover;
     background-image: url(../resources/img/deportes.jpg); 
     margin-left: 10%;   
 }
