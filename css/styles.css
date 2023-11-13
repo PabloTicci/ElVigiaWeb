@@ -198,7 +198,7 @@ nav a:hover
 
 .c1
 {
-    background-size: contain;
+    background-size: cover;
     background-image: url(../resources/img/nacionales.jpg);
      margin-left:35%;
 }
