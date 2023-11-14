@@ -9,6 +9,7 @@
 <head>
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/noticia.css" rel="stylesheet">
+    <link rel="icon" href="resources/img/LOGO.ico">
     <link rel="icon" href="resources/img/logo.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
