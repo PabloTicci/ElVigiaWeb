@@ -82,8 +82,8 @@ body
 
 .estatales
 {
-    background: -webkit-linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/cultura-portada.jpeg) no-repeat center center/contain;  
-    background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/cultura-portada.jpeg) no-repeat center center/contain;
+    background: -webkit-linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/portada-estatales.jpeg) no-repeat center center/contain;  
+    background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/portada-estatales.jpeg) no-repeat center center/contain;
 }
 
 .nacionales
@@ -97,6 +97,7 @@ body
     background: -webkit-linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/internacionales-portada.jpeg) no-repeat center center/contain;  
     background: linear-gradient(to right, #e0636369, #ff080069), url(../resources/img/internacionales-portada.jpeg) no-repeat center center/contain;
 }
+
 
 .navbar-toggler 
 {
