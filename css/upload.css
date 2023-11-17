@@ -12,6 +12,11 @@ body {
     border-radius: 10px;
     padding: 20px;
   }
+
+  .txt-subir
+  {
+    color: white;
+  }
   
   /* Estilos para el formulario y sus elementos */
   form {
