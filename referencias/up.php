@@ -31,7 +31,7 @@ if(isset($_POST['btnsubir']))
         $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
         move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
 
-        $consulta = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$imagen',curdate(),'$fuente','$categoria')";
+        $consulta = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$target_file',curdate(),'$fuente','$categoria')";
         $resultado = mysqli_query($conn,$consulta);
         if($resultado)
         {
