@@ -12,40 +12,35 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
-if(isset($_POST['btnsubir']))
-{
-    if(empty($_POST["titulo"]) && empty($_POST["noticia"]) && empty($_FILES["imagen"]) && empty($_POST["fuente"]) && empty($_POST["categoria"]))
-    {
-            echo "Acceso denegado";
-    }
-    else
-    {
+if (isset($_POST['btnsubir'])) {
+    // Check other fields for emptiness
+    if (empty($_POST["titulo"]) || empty($_POST["noticia"]) || empty($_FILES["imagen"]["name"]) || empty($_POST["fuente"]) || empty($_POST["categoria"])) {
+        echo "Acceso denegado";
+    } else {
         $titulo = $_POST["titulo"];
         $introduccion = $_POST["introduccion"];
         $noticia = $_POST["noticia"];
-        $fotos = $_POST["fotos"];
         $fuente = $_POST["fuente"];
         $categoria = $_POST["categoria"];
 
-        $target_dir = "resources/img";  // Set your target directory
+        // File upload handling
+        $target_dir = "uploads/";  // Set your target directory
         $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
         move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
 
-        $consulta = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$$target_file',curdate(),'$fuente','$categoria')";
-        $resultado = mysqli_query($conn,$consulta);
-        if($resultado)
-        {
+        $consulta = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$target_file',curdate(),'$fuente','$categoria')";
+        $resultado = mysqli_query($conn, $consulta);
+
+        if ($resultado) {
             ?>
-            <h3 class = "ok"> Registro guadado Correctamente </h3>
+            <h3 class="ok"> Registro guardado correctamente </h3>
             <?php
-        }
-        else
-        {
+        } else {
             ?>
-            <h3 class = "Bad"> Error </h3>
+            <h3 class="Bad"> Error </h3>
             <?php
         }
     }
-} 
+}
 
 ?>
