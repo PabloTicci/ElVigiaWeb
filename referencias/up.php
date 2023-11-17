@@ -24,7 +24,7 @@ if (isset($_POST['btnsubir'])) {
         $categoria = $_POST["categoria"];
 
         // File upload handling
-        $target_dir = "uploads/";  // Set your target directory
+        $target_dir = "resources/img";  // Set your target directory
         $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
         move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
 
