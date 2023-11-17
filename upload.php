@@ -34,8 +34,11 @@
           </div>
 
           <div class="mb-3">
-            <label for="fotos" class="form-label">URL de Foto</label>
-            <input type="text" name="fotos" id="fotos" class="form-control" required>
+            <label for="fotos" class="form-label">Subir imagen</label>
+            <div class="form-group">
+              <label for="my-input">Seleccione una Imagen</label>
+              <input id="my-input"  type="file" name="imagen">
+          </div>
           </div>
 
           <div class="mb-3">
