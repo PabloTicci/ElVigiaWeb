@@ -23,7 +23,7 @@ if(isset($_POST['btnsubir']))
         $titulo = $_POST["titulo"];
         $introduccion = $_POST["introduccion"];
         $noticia = $_POST["noticia"];
-        $fotos = $_POST["fotos"];
+        $fotos = $_POST["imagen"];
         $fuente = $_POST["fuente"];
         $categoria = $_POST["categoria"];
 
@@ -31,7 +31,7 @@ if(isset($_POST['btnsubir']))
         $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
         move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
 
-        $consulta = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$fotos',curdate(),'$fuente','$categoria')";
+        $consulta = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$imagen',curdate(),'$fuente','$categoria')";
         $resultado = mysqli_query($conn,$consulta);
         if($resultado)
         {
