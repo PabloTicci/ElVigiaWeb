@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // Realiza una consulta para obtener las noticias más recientes
-$sql = "SELECT id, titulo, fotos, fecha_publicacion FROM noticia ORDER BY fecha_publicacion DESC LIMIT 10"; 
+$sql = "SELECT id, titulo, fotos, fecha_publicacion FROM noticia ORDER BY id DESC LIMIT 10"; 
 
 $result = $conn->query($sql);
 ?>
