@@ -50,9 +50,9 @@
             <label for="categoria" class="form-label">Categoría</label>
             <select id="categoria" name="categoria" class="form-select">
               <option value="Estatal">Estatal</option>
-              <option value="Nacionales">Nacionales</option>
-              <option value="Internacionales">Internacionales</option>
-              <option value="Deportes">Deportes</option>
+              <option value="Nacional">Nacionales</option>
+              <option value="Internacional">Internacionales</option>
+              <option value="Deporte">Deporte</option>
               <option value="Cultura">Cultura</option>
               <option value="Caldero">Caldero</option>
             </select>
