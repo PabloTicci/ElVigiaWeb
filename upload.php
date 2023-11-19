@@ -7,7 +7,7 @@
   <title>Subir Noticias</title>
 
 
-  <script>
+<script>
   $(document).ready(function(){
     $('form').submit(function(){
       $('button').attr('disabled', true);
