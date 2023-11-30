@@ -1,64 +1,47 @@
 <?php
 
+
 $servername = "localhost";
 $username = "u630558413_Pablo";
 $password = "Lobitonan1723";
 $dbname = "u630558413_Vigia";
 
+// Crear una conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Verificar la conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
-
-// Obtener el nombre del archivo si se ha subido
-$target_file = isset($_FILES["imagen"]["name"]) ? $_FILES["imagen"]["name"] : null;
-
-// Desactivar desencadenadores
-mysqli_query($conn, "SET foreign_key_checks = 0;");
-
-// Realizar la operación de inserción
 if (isset($_POST['btnsubir'])) {
-    // ... (tu código de inserción)
-
-    // Por ejemplo:
-    $titulo = $_POST["titulo"];
-    $introduccion = $_POST["introduccion"];
-    $noticia = $_POST["noticia"];
-    $fuente = $_POST["fuente"];
-    $categoria = $_POST["categoria"];
-    $videos_url = $_POST["videos_url"];
-
-    // Resto de tu lógica de inserción aquí
-
-    // Verificar si la subida de archivo fue exitosa antes de utilizar $target_file
-    if (move_uploaded_file($_FILES["imagen"]["tmp_name"], "ruta_de_destino/" . $target_file)) {
-        $consultaNoticia = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) 
-                     VALUES ('$titulo','$introduccion','$noticia','$target_file',curdate(),'$fuente','$categoria')";
-
-        $resultadoNoticia = mysqli_query($conn, $consultaNoticia);
-
-        if ($resultadoNoticia) {
-            // Si la inserción en la tabla noticia fue exitosa, ahora insertamos en la tabla multimedia
-            $idNoticia = mysqli_insert_id($conn); // Obtener el ID de la última inserción
-
-            $consultaMultimedia = "INSERT INTO multimedia (id_noticia, videos_url) VALUES ('$idNoticia', '$videos_url')";
-            $resultadoMultimedia = mysqli_query($conn, $consultaMultimedia);
-
-            if ($resultadoMultimedia) {
-                echo "<h3 class='ok'>Registro guardado correctamente</h3>";
-            } else {
-                echo "<h3 class='Bad'>Error al insertar en la tabla multimedia</h3>";
-            }
-        } else {
-            echo "<h3 class='Bad'>Error al insertar en la tabla noticia</h3>";
-        }
+    // Check other fields for emptiness
+    if (empty($_POST["titulo"]) || empty($_POST["noticia"]) || empty($_FILES["imagen"]["name"]) || empty($_POST["fuente"]) || empty($_POST["categoria"])) {
+        echo "Acceso denegado";
     } else {
-        echo "<h3 class='Bad'>Error al mover el archivo</h3>";
+        $titulo = $_POST["titulo"];
+        $introduccion = $_POST["introduccion"];
+        $noticia = $_POST["noticia"];
+        $fuente = $_POST["fuente"];
+        $categoria = $_POST["categoria"];
+
+        // File upload handling
+        $target_dir = "resources/img";  // Set your target directory
+        $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
+        move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
+
+        $consulta = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$target_file',curdate(),'$fuente','$categoria')";
+        $resultado = mysqli_query($conn, $consulta);
+
+        if ($resultado) {
+            ?>
+            <h3 class="ok"> Registro guardado correctamente </h3>
+            <?php
+        } else {
+            ?>
+            <h3 class="Bad"> Error </h3>
+            <?php
+        }
     }
 }
-
-// Reactivar desencadenadores
-mysqli_query($conn, "SET foreign_key_checks = 1;");
 
 ?>
