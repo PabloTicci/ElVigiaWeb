@@ -31,25 +31,30 @@ if (isset($_POST['btnsubir'])) {
 
     // Resto de tu lógica de inserción aquí
 
-    $consultaNoticia = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) 
-                 VALUES ('$titulo','$introduccion','$noticia','$target_file',curdate(),'$fuente','$categoria')";
+    // Verificar si la subida de archivo fue exitosa antes de utilizar $target_file
+    if (move_uploaded_file($_FILES["imagen"]["tmp_name"], "ruta_de_destino/" . $target_file)) {
+        $consultaNoticia = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) 
+                     VALUES ('$titulo','$introduccion','$noticia','$target_file',curdate(),'$fuente','$categoria')";
 
-    $resultadoNoticia = mysqli_query($conn, $consultaNoticia);
+        $resultadoNoticia = mysqli_query($conn, $consultaNoticia);
 
-    if ($resultadoNoticia) {
-        // Si la inserción en la tabla noticia fue exitosa, ahora insertamos en la tabla multimedia
-        $idNoticia = mysqli_insert_id($conn); // Obtener el ID de la última inserción
+        if ($resultadoNoticia) {
+            // Si la inserción en la tabla noticia fue exitosa, ahora insertamos en la tabla multimedia
+            $idNoticia = mysqli_insert_id($conn); // Obtener el ID de la última inserción
 
-        $consultaMultimedia = "INSERT INTO multimedia (id_noticia, videos_url) VALUES ('$idNoticia', '$videos_url')";
-        $resultadoMultimedia = mysqli_query($conn, $consultaMultimedia);
+            $consultaMultimedia = "INSERT INTO multimedia (id_noticia, videos_url) VALUES ('$idNoticia', '$videos_url')";
+            $resultadoMultimedia = mysqli_query($conn, $consultaMultimedia);
 
-        if ($resultadoMultimedia) {
-            echo "<h3 class='ok'>Registro guardado correctamente</h3>";
+            if ($resultadoMultimedia) {
+                echo "<h3 class='ok'>Registro guardado correctamente</h3>";
+            } else {
+                echo "<h3 class='Bad'>Error al insertar en la tabla multimedia</h3>";
+            }
         } else {
-            echo "<h3 class='Bad'>Error al insertar en la tabla multimedia</h3>";
+            echo "<h3 class='Bad'>Error al insertar en la tabla noticia</h3>";
         }
     } else {
-        echo "<h3 class='Bad'>Error al insertar en la tabla noticia</h3>";
+        echo "<h3 class='Bad'>Error al mover el archivo</h3>";
     }
 }
 
