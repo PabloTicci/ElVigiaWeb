@@ -54,6 +54,17 @@
           </div>
 
           <div class="mb-3">
+            <label for="videos" class="form-label">Video URL</label>
+            <input type="text" name="videos_url" id="videos_url" class="form-control" placeholder="Inserta la URL del video">
+          </div>
+
+              <!-- Modificar la entrada de archivos para permitir múltiples archivos -->
+          <div class="mb-3">
+            <label for="videos" class="form-label">Subir video (opcional)</label>
+            <input id="my-input" type="file" name="videos[]" accept="video/*" multiple>
+          </div>
+
+          <div class="mb-3">
             <label for="fuente" class="form-label">Fuente</label>
             <input type="text" name="fuente" id="fuente" class="form-control" required>
           </div>
