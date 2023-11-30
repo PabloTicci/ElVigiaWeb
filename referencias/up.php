@@ -11,6 +11,9 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
+// Obtener el nombre del archivo si se ha subido
+$target_file = isset($_FILES["imagen"]["name"]) ? $_FILES["imagen"]["name"] : null;
+
 // Desactivar desencadenadores
 mysqli_query($conn, "SET foreign_key_checks = 0;");
 
