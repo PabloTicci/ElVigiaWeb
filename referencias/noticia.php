@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
 
     $stmt_noticia->close(); // Cerrar la primera consulta antes de realizar otras consultas
 
-    // Recupera las fotos asociadas a la noticia
+    // Recupera las fotos asociadas a la noticia, incluyendo las imágenes de noticias antiguas
     $sql_fotos = "SELECT archivo_path FROM multimedia WHERE noticia_id = ? AND tipo = 'imagen'";
     $stmt_fotos = $conn->prepare($sql_fotos);
     $stmt_fotos->bind_param("i", $id_noticia);
