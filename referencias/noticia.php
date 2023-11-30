@@ -29,41 +29,43 @@ if (isset($_GET['id'])) {
     // Verifica si se encontraron resultados
     if ($stmt_noticia->fetch()) {
         // La información de la noticia está disponible en las variables
-
-        // Recupera las fotos asociadas a la noticia
-        $sql_fotos = "SELECT archivo_path FROM multimedia WHERE noticia_id = ? AND tipo = 'imagen'";
-        $stmt_fotos = $conn->prepare($sql_fotos);
-        $stmt_fotos->bind_param("i", $id_noticia);
-        $stmt_fotos->execute();
-        $stmt_fotos->bind_result($foto);
-
-        $fotos = array();
-        while ($stmt_fotos->fetch()) {
-            $fotos[] = $foto;
-        }
-
-        $stmt_fotos->close();
-
-        // Recupera los videos asociados a la noticia
-        $sql_videos = "SELECT archivo_path FROM multimedia WHERE noticia_id = ? AND tipo = 'video'";
-        $stmt_videos = $conn->prepare($sql_videos);
-        $stmt_videos->bind_param("i", $id_noticia);
-        $stmt_videos->execute();
-        $stmt_videos->bind_result($video);
-
-        $videos = array();
-        while ($stmt_videos->fetch()) {
-            $videos[] = $video;
-        }
-
-        $stmt_videos->close();
     } else {
         echo "No se encontró la noticia seleccionada.";
+        exit; // Agregamos exit para detener la ejecución del script si no se encuentra la noticia
     }
 
-    $stmt_noticia->close();
+    $stmt_noticia->close(); // Cerrar la primera consulta antes de realizar otras consultas
+
+    // Recupera las fotos asociadas a la noticia
+    $sql_fotos = "SELECT archivo_path FROM multimedia WHERE noticia_id = ? AND tipo = 'imagen'";
+    $stmt_fotos = $conn->prepare($sql_fotos);
+    $stmt_fotos->bind_param("i", $id_noticia);
+    $stmt_fotos->execute();
+    $stmt_fotos->bind_result($foto);
+
+    $fotos = array();
+    while ($stmt_fotos->fetch()) {
+        $fotos[] = $foto;
+    }
+
+    $stmt_fotos->close();
+
+    // Recupera los videos asociados a la noticia
+    $sql_videos = "SELECT archivo_path FROM multimedia WHERE noticia_id = ? AND tipo = 'video'";
+    $stmt_videos = $conn->prepare($sql_videos);
+    $stmt_videos->bind_param("i", $id_noticia);
+    $stmt_videos->execute();
+    $stmt_videos->bind_result($video);
+
+    $videos = array();
+    while ($stmt_videos->fetch()) {
+        $videos[] = $video;
+    }
+
+    $stmt_videos->close();
 } else {
     echo "ID de noticia no especificado.";
+    exit; // Agregamos exit para detener la ejecución del script si no se especifica el ID de la noticia
 }
 
 // Cierra la conexión a la base de datos
