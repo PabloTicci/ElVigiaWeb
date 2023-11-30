@@ -17,15 +17,15 @@ $titulo = $introduccion = $noticia = $fotos = $fecha_publicacion = $fuente = "";
 // Recupera el ID de la noticia desde la URL
 if (isset($_GET['id'])) {
     $id_noticia = $_GET['id'];
-
+    
     // Realiza una consulta preparada para obtener la información de la noticia seleccionada
     $sql_noticia = "SELECT titulo, introduccion, noticia, fecha_publicacion, fuente FROM noticia WHERE id = ?";
-
+    
     $stmt_noticia = $conn->prepare($sql_noticia);
     $stmt_noticia->bind_param("i", $id_noticia);
     $stmt_noticia->execute();
     $stmt_noticia->bind_result($titulo, $introduccion, $noticia, $fecha_publicacion, $fuente);
-    
+
     // Verifica si se encontraron resultados
     if ($stmt_noticia->fetch()) {
         // La información de la noticia está disponible en las variables
@@ -66,5 +66,6 @@ if (isset($_GET['id'])) {
     echo "ID de noticia no especificado.";
 }
 
+// Cierra la conexión a la base de datos
 $conn->close();
 ?>
