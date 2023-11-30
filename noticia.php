@@ -1,3 +1,7 @@
+<?php
+    include("referencias/noticia.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
