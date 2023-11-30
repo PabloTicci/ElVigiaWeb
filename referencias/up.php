@@ -25,6 +25,7 @@ if (isset($_POST['btnsubir'])) {
 
     // Manejo de archivos de video
     $videos = array();
+    $target_file = '';
 
     if (!empty($_FILES['videos']['name'][0])) {
         // Si se subieron archivos de video
