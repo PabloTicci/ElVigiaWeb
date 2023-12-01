@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT id, titulo, fotos, introduccion FROM noticia WHERE etiquetas LIKE 'Deporte'";
+$sql = "SELECT id, titulo, fotos, introduccion FROM noticia WHERE etiquetas LIKE 'Deporte' ORDER BY id DESC";
 
 $result = $conn->query($sql);
 ?>
