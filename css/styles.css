@@ -476,7 +476,7 @@ nav a:hover
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+    }
 
 .news-container {
     margin-top: 10%;
