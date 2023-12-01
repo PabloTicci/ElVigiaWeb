@@ -56,7 +56,7 @@
 
 <div class="cont-info">
   <div class="text-info">
-      <h2>EN MANTENIMIENTO</h2>
+      <h2>¡Bienvenidos al Vigía Hidalgo!</h2>
       <h1>Únete a nosotros <br/>en este emocionante <br/> viaje informativo.</h1>
       <h3>Tu principal fuente de información sobre <br/>los eventos, noticias y acontecimientos más relevantes <br/>que impactan a nuestro Estado, al país y al mundo.
       </h3>
