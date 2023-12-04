@@ -105,8 +105,14 @@ $result = mysqli_query($conn, $select_query);
             echo "<td>{$row['titulo']}</td>";
             echo "<td>{$row['fecha_publicacion']}</td>";
             echo "<td>
-                    <a href='menu.php?edit={$row['id']}'>Editar</a>
-                    <a href='menu.php?delete={$row['id']}'>Eliminar</a>
+                    <form method='post' style='display: inline;'>
+                        <input type='hidden' name='edit' value='{$row['id']}'>
+                        <button type='submit'>Editar</button>
+                    </form>
+                    <form method='post' style='display: inline;'>
+                        <input type='hidden' name='delete' value='{$row['id']}'>
+                        <button type='submit'>Eliminar</button>
+                    </form>
                   </td>";
             echo "</tr>";
         }
@@ -114,6 +120,7 @@ $result = mysqli_query($conn, $select_query);
     </table>
 </body>
 </html>
+
 
 <?php
 // Close the database connection
