@@ -1,6 +1,5 @@
 <?php
 
-
 $servername = "localhost";
 $username = "u630558413_Pablo";
 $password = "Lobitonan1723";
@@ -13,6 +12,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
+
 if (isset($_POST['btnsubir'])) {
     // Check other fields for emptiness
     if (empty($_POST["titulo"]) || empty($_POST["noticia"]) || empty($_FILES["imagen"]["name"]) || empty($_POST["fuente"]) || empty($_POST["categoria"])) {
@@ -20,7 +20,7 @@ if (isset($_POST['btnsubir'])) {
     } else {
         $titulo = $_POST["titulo"];
         $introduccion = $_POST["introduccion"];
-        $noticia = $_POST["noticia"];
+        $noticia = mysqli_real_escape_string($conn, $_POST["noticia"]); // Escapar caracteres especiales
         $fuente = $_POST["fuente"];
         $categoria = $_POST["categoria"];
 
@@ -29,19 +29,21 @@ if (isset($_POST['btnsubir'])) {
         $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
         move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
 
-        $consulta = "INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) values ('$titulo','$introduccion','$noticia','$target_file',curdate(),'$fuente','$categoria')";
-        $resultado = mysqli_query($conn, $consulta);
+        // Utilizando una consulta preparada para evitar la inyección SQL
+        $consulta = $conn->prepare("INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) VALUES (?, ?, ?, ?, curdate(), ?, ?)");
+        $consulta->bind_param("ssssss", $titulo, $introduccion, $noticia, $target_file, $fuente, $categoria);
 
-        if ($resultado) {
+        if ($consulta->execute()) {
             ?>
-            <h3 class="ok"> Registro guardado correctamente </h3>
+            <h3 class="ok">Registro guardado correctamente</h3>
             <?php
         } else {
             ?>
-            <h3 class="Bad"> Error </h3>
+            <h3 class="Bad">Error</h3>
             <?php
         }
+
+        $consulta->close();
     }
 }
-
 ?>
