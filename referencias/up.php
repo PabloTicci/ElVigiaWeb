@@ -20,7 +20,7 @@ if (isset($_POST['btnsubir'])) {
     } else {
         $titulo = $_POST["titulo"];
         $introduccion = $_POST["introduccion"];
-        $noticia = mysqli_real_escape_string($conn, $_POST["noticia"]); // Escapar caracteres especiales
+        $noticia = $_POST["noticia"];
         $fuente = $_POST["fuente"];
         $categoria = $_POST["categoria"];
 
