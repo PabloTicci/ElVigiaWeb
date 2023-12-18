@@ -24,13 +24,15 @@ if (isset($_POST['btnsubir'])) {
         $fuente = $_POST["fuente"];
         $categoria = $_POST["categoria"];
 
+         // Antes de insertar, reemplazar los saltos de línea
+         $noticia = str_replace("\r\n", "\n", $noticia);
+
         // File upload handling
         $target_dir = "resources/img";  // Set your target directory
         $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
         move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
 
-       // Antes de insertar, reemplazar los saltos de línea
-        $noticia = str_replace("\r\n", "\n", $noticia);
+      
 
         // Utilizando una consulta preparada para evitar la inyección SQL
         $consulta = $conn->prepare("INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) VALUES (?, ?, ?, ?, curdate(), ?, ?)");

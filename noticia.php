@@ -57,18 +57,18 @@
 </header>
 
 <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="news-container">
-                    <h2 class="text-primary"><?php echo $titulo ?></h2>
-                    <p class="lead"><?php echo $introduccion ?></p>
-                    <img src="<?php echo $fotos ?>" alt="Imagen de la noticia" class="img-fluid rounded mb-3">
-                    <p><?php echo nl2br(str_replace("\r\n", "\n", $noticia)) ?></p>
-                    <p>Fecha de Publicación: <?php echo $fecha_publicacion ?></p>
-                    <p>Fuente de la Noticia: <a href="#"><?php echo $fuente ?></a></p>
-                </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="news-container">
+                <h2 class="text-primary"><?php echo $titulo ?></h2>
+                <p class="lead"><?php echo $introduccion ?></p>
+                <img src="<?php echo $fotos ?>" alt="Imagen de la noticia" class="img-fluid rounded mb-3">
+                <p><?php echo nl2br($noticia) ?></p>
+                <p>Fecha de Publicación: <?php echo $fecha_publicacion ?></p>
+                <p>Fuente de la Noticia: <a href="#"><?php echo $fuente ?></a></p>
             </div>
         </div>
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@2.10.2/dist/umd/popper.min.js"></script>
