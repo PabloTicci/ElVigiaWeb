@@ -29,9 +29,13 @@ if (isset($_POST['btnsubir'])) {
         $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
         move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
 
+       // Antes de insertar, reemplazar los saltos de línea
+        $noticia = str_replace("\r\n", "\n", $noticia);
+
         // Utilizando una consulta preparada para evitar la inyección SQL
         $consulta = $conn->prepare("INSERT INTO noticia (titulo, introduccion, noticia, fotos, fecha_publicacion, fuente, etiquetas) VALUES (?, ?, ?, ?, curdate(), ?, ?)");
         $consulta->bind_param("ssssss", $titulo, $introduccion, $noticia, $target_file, $fuente, $categoria);
+
 
         if ($consulta->execute()) {
             ?>
