@@ -59,16 +59,15 @@
   <img src="" alt="">
 </header>
 
-<div class="container cont-noti">
-        <div class="Noticias">
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                  $id = $row["id"];
-                  $titulo = $row["titulo"];
-                  $fotos = $row["fotos"];
-                  $fecha_publicacion = $row["fecha_publicacion"];;
-            ?>
+<main class="recientes">
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $id = $row["id"];
+            $titulo = $row["titulo"];
+            $fotos = $row["fotos"];
+            $fecha_publicacion = $row["fecha_publicacion"];
+    ?>
             <div class="card item">
                 <div class="content">
                     <h2 class="title"><?php echo $titulo; ?></h2>
@@ -77,14 +76,13 @@
                     <a href="noticia.php?id=<?php echo $id; ?>" class="btn">Ver Más</a>
                 </div>
             </div>
-            <?php
-                }
-            } else {
-                echo "No se encontraron noticias con la etiqueta $etiqueta.";
-            }
-            ?>
-        </div>
-  </div>
+    <?php
+        }
+    } else {
+        echo "No se encontraron noticias.";
+    }
+    ?>
+</main>
 
 
 
