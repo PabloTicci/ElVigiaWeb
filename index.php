@@ -66,6 +66,33 @@
   </div>
 </div>
 
+
+
+<main class="recientes">
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $id = $row["id"];
+            $titulo = $row["titulo"];
+            $fotos = $row["fotos"];
+            $fecha_publicacion = $row["fecha_publicacion"];
+    ?>
+            <div class="card item">
+                <div class="content">
+                    <h2 class="title"><?php echo $titulo; ?></h2>
+                    <img src="<?php echo $fotos; ?>" class="img-not">
+                    <p class="copy"><?php echo $fecha_publicacion; ?></p>
+                    <a href="noticia.php?id=<?php echo $id; ?>" class="btn">Ver Más</a>
+                </div>
+            </div>
+    <?php
+        }
+    } else {
+        echo "No se encontraron noticias.";
+    }
+    ?>
+</main>
+
 <main class="page-content">
   
   <div class="card c3" >
@@ -93,32 +120,6 @@
   </div>
 
 </main>
-
-<main class="recientes">
-    <?php
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $id = $row["id"];
-            $titulo = $row["titulo"];
-            $fotos = $row["fotos"];
-            $fecha_publicacion = $row["fecha_publicacion"];
-    ?>
-            <div class="card item">
-                <div class="content">
-                    <h2 class="title"><?php echo $titulo; ?></h2>
-                    <img src="<?php echo $fotos; ?>" class="img-not">
-                    <p class="copy"><?php echo $fecha_publicacion; ?></p>
-                    <a href="noticia.php?id=<?php echo $id; ?>" class="btn">Ver Más</a>
-                </div>
-            </div>
-    <?php
-        }
-    } else {
-        echo "No se encontraron noticias.";
-    }
-    ?>
-</main>
-
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
