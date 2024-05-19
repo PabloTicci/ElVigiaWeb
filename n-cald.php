@@ -8,6 +8,7 @@
 
 <head>
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/noticia.css" rel="stylesheet">
     <link rel="icon" href="resources/img/LOGO.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,30 +59,33 @@
   <img src="" alt="">
 </header>
 
-<main class="recientes">
-    <?php
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $id = $row["id"];
-            $titulo = $row["titulo"];
-            $fotos = $row["fotos"];
-            $fecha_publicacion = $row["fecha_publicacion"];
-    ?>
-            <div class="card item">
-                <div class="content">
-                    <h2 class="title"><?php echo $titulo; ?></h2>
-                    <img src="<?php echo $fotos; ?>" class="img-not">
-                    <p class="copy"><?php echo $fecha_publicacion; ?></p>
-                    <a href="noticia.php?id=<?php echo $id; ?>" class="btn">Ver Más</a>
-                </div>
-            </div>
-    <?php
-        }
-    } else {
-        echo "No se encontraron noticias.";
-    }
-    ?>
-</main>
+<div class="container cont-noti">
+        <div class="Noticias">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $id = $row["id"];
+                    $titulo = $row["titulo"];
+                    $fotos = $row["fotos"];
+                    $introduccion = $row["introduccion"];
+            ?>
+            <div class="noticia">
+              <div class="imagen-noticia">
+                <img src="<?php echo $fotos; ?>" alt="Noticia 1">
+              </div>
+              <div class="titulo"><?php echo $titulo; ?></div>
+              <div class="introduccion"><?php echo $introduccion; ?></div>
+              <a href="noticia.php?id=<?php echo $id; ?>" class="btn btn-primary">Ver Noticia</a>
+           </div>
+
+            <?php
+                }
+            } else {
+                echo "No se encontraron noticias con la etiqueta $etiqueta.";
+            }
+            ?>
+        </div>
+  </div>
 
 
 
